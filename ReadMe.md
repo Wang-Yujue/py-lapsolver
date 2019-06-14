@@ -3,10 +3,20 @@
 ### Install
 
 ```
-pip install [--pre] lapsolver 
+pip install lapsolver 
 ```
-
-Windows binary wheels are provided for Python 3.5/3.6. Source wheels otherwise.
+#### Problem
+‚lapsolver’ installation error: required CMake for build, the lates version has OpenMP supporting, however the OpenMP finding in CMakeLists doesn’t work and causes the installation failure on MacOS. 
+#### Solution
+1. Comment
+```
+# find_package(OpenMP)
+# target_compile_options(lapsolverc PUBLIC "$<$<CONFIG:RELEASE>:${OpenMP_CXX_FLAGS}>")
+```
+Then, install from source
+OR
+2. Install the previous release
+        Pip install lapsolver==1.0.0.dev60
 
 ### Install from source
 
