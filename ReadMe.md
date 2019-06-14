@@ -1,6 +1,6 @@
 ## lapsolver
 A fast Linear Assignment Problem solver using Hungarian Algorithm, also known as Kuhn–Munkres algorithm or Munkres assignment algorithm.  
-Compared to scipy.optimize.linear_sum_assignment, the big advantage of this solver is that it supports Non-allowed pairings (NaN values in cost matrix).
+Compared to scipy.optimize.linear_sum_assignment, the big advantage of this solver is that it supports **Non-allowed** pairings (**NaN** values in cost matrix).
 
 ### Install
 
@@ -59,7 +59,7 @@ col_ind
 array([0, 1, 2], dtype=int32)
 ```
 
-Non-allowed pairings
+**Non-allowed** pairings
 
 ```python
 cost = np.array([[1, 2, 3], 
