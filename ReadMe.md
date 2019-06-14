@@ -1,4 +1,5 @@
-**lapsolver** A fast Linear Assignment Problem solver using Hungarian Algorithm, also known as Kuhn–Munkres algorithm or Munkres assignment algorithm. 
+## lapsolver
+A fast Linear Assignment Problem solver using Hungarian Algorithm, also known as Kuhn–Munkres algorithm or Munkres assignment algorithm. 
 
 ### Install
 
