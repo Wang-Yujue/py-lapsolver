@@ -1,4 +1,4 @@
-**py-lapsolver** implements a linear sum assignment problem solver for dense matrices based on shortest path augmentation. In practice, it solves 5000x5000 problems in around 3 seconds.
+**lapsolver** A fast Linear Assignment Problem solver using Hungarian Algorithm, also known as Kuhn–Munkres algorithm or Munkres assignment algorithm. 
 
 ### Install
 
@@ -6,17 +6,21 @@
 pip install lapsolver 
 ```
 #### Problem
-‚lapsolver’ installation error: required CMake for build, the lates version has OpenMP supporting, however the OpenMP finding in CMakeLists doesn’t work and causes the installation failure on MacOS. 
+**lapsolver** installation error: required CMake for build, the lates version has OpenMP supporting, however the OpenMP finding in CMakeLists doesn’t work and causes the installation failure on MacOS. 
 #### Solution
 1. Comment
 ```
 # find_package(OpenMP)
 # target_compile_options(lapsolverc PUBLIC "$<$<CONFIG:RELEASE>:${OpenMP_CXX_FLAGS}>")
 ```
-Then, install from source
-OR
+Then, **install from source**  
+
+OR  
+
 2. Install the previous release
-        Pip install lapsolver==1.0.0.dev60
+```
+Pip install lapsolver==1.0.0.dev60
+```
 
 ### Install from source
 
