@@ -1,5 +1,6 @@
 ## lapsolver
 A fast Linear Assignment Problem solver using Hungarian Algorithm, also known as Kuhn–Munkres algorithm or Munkres assignment algorithm. 
+One big advantage comparing with scipy.optimize.linear_sum_assignment is that it supports Non-allowed pairings (NaN values in cost matrix).
 
 ### Install
 
@@ -46,42 +47,29 @@ Executing the tests requires `pytest` and optionally `pytest-benchmark` for gene
 import numpy as np
 from lapsolver import solve_dense
 
-costs = np.array([
-    [6, 9, 1],
-    [10, 3, 2],
-    [8, 7, 4.]
-], dtype=np.float32)    
+cost = np.array([[1, 2, 3], [1, 1, 1], [3, 3, 3]])
 
-rids, cids = solve_dense(costs)
-
-for r,c in zip(rids, cids):
-    print(r,c) # Row/column pairings
-"""
-0 2
-1 1
-2 0
-"""
+row_ind, col_ind = solve_dense(cost)  #return row and column indice of assignments
+row_ind
+array([0, 1, 2], dtype=int32)
+col_ind
+array([0, 1, 2], dtype=int32)
 ```
 
-You may also want to mark certain pairings impossible
+Non-allowed pairings
 
 ```python
-# Matrix with non-allowed pairings
-costs = np.array([
-    [5, 9, np.nan],
-    [10, np.nan, 2],
-    [8, 7, 4.]]
-)
+cost = np.array([[1, 2, 3], 
+                 [1, 1, 1], 
+                 [np.nan, np.nan, np.nan], 
+                 [3, 3, 3]])
 
-rids, cids = solve_dense(costs)
+row_ind, col_ind = solve_dense(cost)
 
-for r,c in zip(rids, cids):
-    print(r,c) # Row/column pairings
-"""
-0 0
-1 2
-2 1
-"""
+row_ind
+array([0, 1, 3], dtype=int32)
+col_ind
+array([0, 1, 2], dtype=int32)
 ```
 
 ### Benchmarks
