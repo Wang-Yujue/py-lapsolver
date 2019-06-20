@@ -21,7 +21,7 @@ OR
 
 2. Install the previous release
 ```
-Pip install lapsolver==1.0.0.dev60
+pip install lapsolver==1.0.0.dev60
 ```
 
 ### Install from source
