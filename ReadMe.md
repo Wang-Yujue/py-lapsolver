@@ -8,7 +8,7 @@ Compared to scipy.optimize.linear_sum_assignment, the big advantage of this solv
 pip install lapsolver 
 ```
 #### Problem
-**lapsolver** installation error: required CMake for build, the lates version has OpenMP supporting, however the OpenMP finding in CMakeLists doesn’t work and causes the installation failure on MacOS. 
+**lapsolver** installation error: required CMake for build, the lates version has OpenMP supporting, however the OpenMP finding in CMakeLists.txt doesn’t work and causes the installation failure on MacOS. 
 #### Solution
 1. Comment
 ```
